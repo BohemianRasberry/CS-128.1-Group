@@ -1,5 +1,4 @@
 import React from 'react';
-import { useLocation, useNavigate } from "react-router-dom";
 import './Header.css';
 
 import home_icon from '../Assets/Home-LO.png';
@@ -7,9 +6,10 @@ import home_icon from '../Assets/Home-LO.png';
 const Header = () => {
     return (
         <div className='header'>
-
-            <div className="title-short-lo">MLV DTP</div>
-            <div className="title-lo">MLV Diagnostic Test Portal</div>
+            <div className="title-lo-move">
+                <div className="title-short-lo">MLV DTP</div>
+                <div className="title-lo">MLV Diagnostic Test Portal</div>
+            </div>
 
             <div className="home-lo">
                     <img src={home_icon} alt="Home" />

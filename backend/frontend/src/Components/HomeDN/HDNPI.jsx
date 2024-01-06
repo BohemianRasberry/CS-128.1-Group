@@ -91,37 +91,34 @@ const HDNPI = () => {
                 )}
             <div className="hdnpi-patient-detailed-info-header-row">
                 <div className="hdnpi-patients-header">
-                    <div className="hdnpi-p-h">Date & Time Given</div>
+                    <div className="hdnpi-p-h">Date & Time Requested</div>
                     <div className="hdnpi-p-h-separator">|</div>
-                    <div className="hdnpi-p-h">Specimen Number</div>
+                    <div className="hdnpi-p-h">Date & Time Received</div>
                     <div className="hdnpi-p-h-separator">|</div>
-                    <div className="hdnpi-p-h">Laboratory Test</div>
+                    <div className="hdnpi-p-h">Transaction ID</div>
                     <div className="hdnpi-p-h-separator">|</div>
-                    <div className="hdnpi-p-h">Laboratory Test ID</div>
+                    <div className="hdnpi-p-h">Recommending Doctor</div>
                 </div>
 
                 <div className={`hdnpi-patients-table-container ${isScrollbarVisible ? '' : 'add-padding'}`} ref={tableContainerRef}>
                     <div className="hdnpi-p-t-c-table">
                         {/* Display transactions */}
                         {transactions.map((transaction) => (
-                            <div key={transaction.id} className="hdnpi-patients-row">
+                            <button key={transaction.id} className="hdnpi-patients-row" onClick={() => redirectToPatientView(transaction.patientid, transaction.testcode, transaction.testid)}>
                                 <div className="hdnpi-p-h-cell">{transaction.datetime}</div>
                                 <div className="hdnpi-p-h-separator">|</div>
                                 <div className="hdnpi-p-h-cell">{transaction.specimenid}</div>
                                 <div className="hdnpi-p-h-separator">|</div>
                                 <div className="hdnpi-p-h-cell">{getTestName(transaction.testcode)}</div>
                                 <div className="hdnpi-p-h-separator">|</div>
-                                <button
-                                    className="hdnpi-p-h-cell"
-                                    onClick={() => redirectToPatientView(transaction.patientid, transaction.testcode, transaction.testid)}>
-                                    {transaction.testid}
-                                </button>
-                            </div>
+                                <div className="hdnpi-p-h-cell">{transaction.testid}</div>
+                            </button>
                         ))}
                     </div>
                 </div>
+                </div>
             </div>
-        </div>
+            <div className="dn-tagline">- Accurate, Fast, and Reliable Laboratory Results -</div>
         </div>
     );
 };

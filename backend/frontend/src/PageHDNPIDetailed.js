@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Components/Header/HeaderLI";
-import HDNPID from './Components/HDNPIDetailed/HDNPID';
+import HDNPID from './Components/HomeDN/HDNPID';
 
 function PageHDNPID() {
     return(

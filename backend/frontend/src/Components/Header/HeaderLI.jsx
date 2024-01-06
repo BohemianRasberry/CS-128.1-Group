@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import './Header.css';
 
+import back_icon from '../Assets/BackButton.png';
+import forward_icon from '../Assets/ForwardButton.png';
 import home_icon from '../Assets/Home.png';
 import Userfront from "@userfront/core";
 
@@ -25,20 +27,42 @@ const Header = () => {
 
     return (
         <div className='header'>
-            <div onClick={navigateHome}>
-                <div className="title-short"><span>MLV DTP</span></div>
-                <div className="title"><span>MLV Diagnostic Test Portal</span></div>
+            <div className="left-stuff">
+                <div onClick={() => {
+                    if (window.location.pathname !== '/') {
+                        navigate(-1);
+                    }
+                    }}>
+                    <div className="back">
+                        <button><img src={back_icon} alt="Back" /></button>
+                    </div>
+                </div>
+
+                <div className="titulo" onClick={navigateHome}>
+                    <button className="title-short"><span>MLV DTP</span></button>
+                    <button className="title"><span>MLV Diagnostic Test Portal</span></button>
+                </div>
+
+                <div onClick={() => navigate(+1)}> 
+                    <div className="forward"> 
+                        <button><img src={forward_icon} alt="Forward" /></button> 
+                    </div> 
+                </div> 
             </div>
 
-            <button onClick={handleLogout} className="logout-button">
-                    <span><div className='logout-button-text'>
-                        Logout
-                    </div></span>
-            </button>
+            <div className="right-stuff">
+                <div className="l-o">
+                    <button onClick={handleLogout} className="logout-button">
+                            <span><div className='logout-button-text'>
+                                Logout
+                            </div></span>
+                    </button>
+                </div>
 
-            <div onClick={navigateHome}>
-                <div className="home">
-                    <span><img src={home_icon} alt="Home" /></span>
+                <div className="navhome" onClick={navigateHome}>
+                    <button className="home">
+                        <span><img src={home_icon} alt="Home" /></span>
+                    </button>
                 </div>
             </div>
         </div>

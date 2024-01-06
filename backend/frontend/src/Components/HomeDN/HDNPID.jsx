@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import logo_icon from '../Assets/Logo.png';
-import './HDNPID.css';
+import './HDNPI.css';
 import { useParams } from 'react-router-dom';
 import { db } from '../../Firebase';
 import { doc, getDoc, collection } from 'firebase/firestore'; // Import the necessary functions
@@ -9,7 +9,25 @@ const HDNPID = () => {
     const { patientId, testCode, testId } = useParams();
     const [patientData, setPatientData] = useState(null);
     const [transactionData, setTransactionData] = useState(null);
+    const [isScrollbarVisible, setIsScrollbarVisible] = useState(false);
+    const tableContainerRef = useRef(null);
   
+    const checkForScrollbar = () => {
+        const el = tableContainerRef.current;
+        if (el) {
+            const hasScrollbar = el.scrollHeight > el.clientHeight;
+            setIsScrollbarVisible(hasScrollbar);
+        }
+    };
+
+    useEffect(() => {
+        checkForScrollbar(); // Call on mount
+        window.addEventListener('resize', checkForScrollbar); // Add listener on window resize
+        return () => {
+            window.removeEventListener('resize', checkForScrollbar); // Clean up listener on unmount
+        };
+    }, [transactionData]);
+
     const collectionMapping = {
       '1': 'cbc',
       '2': 'bloodtyping',
@@ -73,7 +91,6 @@ const HDNPID = () => {
 
     return (
         <div className="hdnpi-container">
-            
             <div className="hdnpi-title">
                 <img src={logo_icon} alt="Logo" />
                 <div>Laboratory Test Portal</div> {/* Fixed: Removed className to prevent conflict */}
@@ -93,16 +110,18 @@ const HDNPID = () => {
                 )}
             <div className="hdnpi-patient-detailed-info-header-row">
                 <div className="hdnpi-patients-header">
-                    <div className="hdnpi-p-h">Test ID</div>
+                    <div className="hdnpi-p-h">Specimen ID</div>
+                    <div className="hdnpi-p-h-separator">|</div>
+                    <div className="hdnpi-p-h">Test</div>
+                    <div className="hdnpi-p-h-separator">|</div>
+                    <div className="hdnpi-p-h">Parameter</div>
                     <div className="hdnpi-p-h-separator">|</div>
                     <div className="hdnpi-p-h">Result</div>
                     <div className="hdnpi-p-h-separator">|</div>
-                    <div className="hdnpi-p-h">Specimen ID</div>
-                    <div className="hdnpi-p-h-separator">|</div>
-                    <div className="hdnpi-p-h">Test Name</div>
+                    <div className="hdnpi-p-h">SI Unit</div>
                 </div>
 
-                <div className="hdnpi-patients-table-container">
+                <div className={`hdnpi-patients-table-container ${isScrollbarVisible ? '' : 'add-padding'}`} ref={tableContainerRef}>
                     <div className="hdnpi-p-t-c-table">
                     {/* Display data from the retrieved collection */}
                     {transactionData && (
@@ -114,12 +133,15 @@ const HDNPID = () => {
                         <div className="hdnpi-p-h-cell">{transactionData.specimenid}</div>
                         <div className="hdnpi-p-h-separator">|</div>
                         <div className="hdnpi-p-h-cell">{getBiggerTest(transactionData.testcode)}</div>
+                        <div className="hdnpi-p-h-separator">|</div>
+                        <div className="hdnpi-p-h-cell">{getBiggerTest(transactionData.testcode)}</div>
                         </div>
                     )}
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+        <div className="dn-tagline">- Accurate, Fast, and Reliable Laboratory Results -</div>
         </div>
     );
 };

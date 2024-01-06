@@ -59,48 +59,49 @@ const HomeDN = () => {
     }, [patients]);
 
     return (
-        <div className='dn-container'>
-            <div className="dn-logo">
-                <img src={logo_icon} alt="Logo" />
-                <div className='LTP'>Laboratory Test Portal</div>
-            </div>
-            
-            <div className="dn-search">
-                <input type="id" placeholder="Enter Patient ID Number" value={searchInput} onChange={handleInputChange} />
-                <div className="dn-search-button" onClick={handleSearch}>
-                    <span><img src={search_icon} alt="search"></img></span>
+        <div className='dn-full'>
+            <div className='dn-container'>
+                <div className="dn-logo">
+                    <img src={logo_icon} alt="Logo" />
+                    <div className='LTP'>Laboratory Test Portal</div>
                 </div>
-            </div>
-            
-            <div className="dn-patients">
-                <div className="dn-patients-header">
-                    <div className="dn-p-h">Patient ID Number</div>
-                    <div className="dn-p-h-separator">|</div>
-                    <div className="dn-p-h">Family Name</div>
-                    <div className="dn-p-h-separator">|</div>
-                    <div className="dn-p-h">First Name</div>
-                    <div className="dn-p-h-separator">|</div>
-                    <div className="dn-p-h">Date of Birth</div>
-                </div>
-
-                <div className={`dn-patients-table-container ${!isScrollbarVisible ? 'add-padding' : ''}`} ref={tableContainerRef}>
-                    <div className="dn-patients-table">
-                        {patients.map((user) => (
-                            <div key={user.id} className="dn-patients-row">
-                                <button className="dn-p-r-cell" onClick={() => 
-                                    redirectToPatientView(user.patientid)}>
-                                        {user.patientid}
-                                        </button>
-                                <div className="dn-p-h-separator">|</div>
-                                <div className="dn-p-r-cell">{user.patientlastname}</div>
-                                <div className="dn-p-h-separator">|</div>
-                                <div className="dn-p-r-cell">{user.patientfirstname}</div>
-                                <div className="dn-p-h-separator">|</div>
-                                <div className="dn-p-r-cell">{user.dateofbirth}</div>
-                            </div>
-                        ))}
+                
+                <div className="dn-search">
+                    <input type="id" placeholder="Enter Patient ID Number" value={searchInput} onChange={handleInputChange} />
+                    <div className="dn-search-button" onClick={handleSearch}>
+                        <span><img src={search_icon} alt="search"></img></span>
                     </div>
                 </div>
+                
+                <div className="dn-patients">
+                    <div className="dn-patients-header">
+                        <div className="dn-p-h">Patient ID Number</div>
+                        <div className="dn-p-h-separator">|</div>
+                        <div className="dn-p-h">Family Name</div>
+                        <div className="dn-p-h-separator">|</div>
+                        <div className="dn-p-h">First Name</div>
+                        <div className="dn-p-h-separator">|</div>
+                        <div className="dn-p-h">Date of Birth</div>
+                    </div>
+
+                    <div className={`dn-patients-table-container ${!isScrollbarVisible ? 'add-padding' : ''}`} ref={tableContainerRef}>
+                        <div className="dn-patients-table">
+                            {patients.map((user) => (
+                                <button key={user.id} className="dn-patients-row" onClick={() => 
+                                    redirectToPatientView(user.patientid)}>
+                                    <div className="dn-p-r-cell">{user.patientid}</div>
+                                    <div className="dn-p-h-separator">|</div>
+                                    <div className="dn-p-r-cell">{user.patientlastname}</div>
+                                    <div className="dn-p-h-separator">|</div>
+                                    <div className="dn-p-r-cell">{user.patientfirstname}</div>
+                                    <div className="dn-p-h-separator">|</div>
+                                    <div className="dn-p-r-cell">{user.dateofbirth}</div>
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className="dn-tagline">- Accurate, Fast, and Reliable Laboratory Results -</div>
             </div>
         </div>
     );

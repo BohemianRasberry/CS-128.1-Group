@@ -15,6 +15,22 @@
     box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
 }
 
+.left-stuff{
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.right-stuff{
+    padding-right: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.title-lo-move{
+    padding-left: 80px;
+}
+
 .title-short, .title-short-lo {
     display: none; /* Both logo and title-short are initially hidden */
     /* Set other necessary styles, if you have any for these classes */
@@ -36,7 +52,6 @@
     width: auto;
     color: #18694e;
     font-size: 25px;
-    padding-left: 60px;
     text-align: left;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
        'Lucida Sans', Arial, sans-serif;
@@ -49,7 +64,6 @@
     width: auto;
     color: #727272a2;
     font-size: 25px;
-    padding-left: 60px;
     text-align: left;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
        'Lucida Sans', Arial, sans-serif;
@@ -57,15 +71,34 @@
     cursor: context-menu;
 }
 
+.titulo button{
+    border: none;
+    background: none;
+}
+
+.titulo button:hover{
+    border-radius: 10px;
+    background: #cacaca64;
+}
+
 .home{
     padding-top: 5px;
-    padding-right: 60px;
     text-align: center;
     cursor: pointer;
 }
 
 .home img{
     width: 40px;
+}
+
+.navhome button {
+    border: none;
+    background: none;
+}
+
+.navhome button:hover {
+    border-radius: 10px;
+    background: #cacaca64;
 }
 
 .home-lo{
@@ -100,6 +133,52 @@
     'Lucida Sans', Arial, sans-serif;
 }
 
+.l-o button:hover {
+    display: flex;
+    background-color: #ffffff; /* Green */
+    border: 2px solid #18694e;
+    border-radius: 50px;
+    color: #18694e;
+}
+
 a {
     text-decoration: none;
   }
+
+.back{
+    padding-right: 10px;
+}
+
+.back img{
+    width: 40px;
+    cursor: pointer;
+}
+
+.back button {
+    border: none;
+    background: none;
+}
+
+.back button:hover {
+    border-radius: 100px;
+    background: #cacaca64;
+}
+
+.forward{
+    padding-left: 10px;
+}
+
+.forward img{
+    width: 40px;
+    cursor: pointer;
+}
+
+.forward button {
+    border: none;
+    background: none;
+}
+
+.forward button:hover {
+    border-radius: 100px;
+    background: #cacaca64;
+}

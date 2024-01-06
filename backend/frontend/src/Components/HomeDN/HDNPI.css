@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;   
     width: 90%;
-    background: #fff;
+    background:#fff;
     padding-bottom: 30px;
     border-radius: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -55,9 +55,11 @@
     justify-content: space-between; /* This allows the items to grow and fill the space equally */
     text-align: start;
     padding: 10px;
-    margin-left: 10px; 
-    margin-right: 10px;
-    font-size: clamp(0.75rem, 2vw, 15px); /* Adjusted the minimum size to prevent it from going to 0 */
+    margin-left: 30px; 
+    margin-right: 30px;
+
+    opacity: 60%;
+    font-size: clamp(0.75rem, 2vw, 16.4px); /* Adjusted the minimum size to prevent it from going to 0 */
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
     'Lucida Sans', Arial, sans-serif;
     color: #6f6f6f;
@@ -113,7 +115,7 @@
 }
 
 .add-padding {
-    padding-right: 5px;
+    padding-right: 5.5px;
 }
 
 .hdnpi-patients-table-container::-webkit-scrollbar {
@@ -151,7 +153,20 @@
     font-size: clamp(0rem, 2vw, 21px);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
     'Lucida Sans', Arial, sans-serif;
-    color: #18694e;
+    color: #838383;
     border: none;
     background: none;
+}
+
+.hdnpi-p-t-c-table button {
+    border: none;
+    border-radius: 15px;
+    background: none;
+    cursor: pointer;
+}
+
+.hdnpi-p-t-c-table button:hover {
+    border: none;
+    background: #cae3dd;
+    cursor: pointer;
 }

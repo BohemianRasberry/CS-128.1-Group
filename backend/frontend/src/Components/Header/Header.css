@@ -22,13 +22,13 @@
 }
 
 .right-stuff{
-    padding-right: 60px;
+    padding-right: 54px;
     display: flex;
     align-items: center;
 }
 
 .title-lo-move{
-    padding-left: 80px;
+    padding-left: 92px;
 }
 
 .title-short, .title-short-lo {
@@ -74,6 +74,7 @@
 .titulo button{
     border: none;
     background: none;
+    padding: 10px;
 }
 
 .titulo button:hover{
@@ -145,10 +146,6 @@ a {
     text-decoration: none;
   }
 
-.back{
-    padding-right: 10px;
-}
-
 .back img{
     width: 40px;
     cursor: pointer;
@@ -162,10 +159,6 @@ a {
 .back button:hover {
     border-radius: 100px;
     background: #cacaca64;
-}
-
-.forward{
-    padding-left: 10px;
 }
 
 .forward img{

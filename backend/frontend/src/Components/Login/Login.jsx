@@ -71,11 +71,11 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
 
-                    <div className = "eyecon" onClick={() => setVisible(!visible)}>
-                        <span>
+                    <div className="eyecon" onClick={() => setVisible(!visible)}>
+                        <button>
                             {visible ? <img src={eyeOpen} alt="Show Password" /> 
                                      : <img src={eyeClose} alt="Hide Password" />}
-                        </span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -83,9 +83,9 @@ const Login = () => {
             <div className="login-button" onClick={handleLogin}>
                 {/* Show loading text or spinner based on isLoading state */}
                 {isLoading ? (
-                    <div className="login-button-text">Logging in...</div>
+                    <button className="login-button-text">Logging in...</button>
                 ) : (
-                    <div className="login-button-text">Login</div>
+                    <button className="login-button-text">Login</button>
                 )}
             </div>
         </div>

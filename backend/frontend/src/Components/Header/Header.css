@@ -56,7 +56,6 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
        'Lucida Sans', Arial, sans-serif;
     font-weight: 600;
-    cursor: pointer;
 }
 
 .title-lo, .title-short-lo{
@@ -146,6 +145,10 @@ a {
     text-decoration: none;
   }
 
+.back {
+    padding-right: 10px;
+}
+
 .back img{
     width: 40px;
     cursor: pointer;
@@ -159,6 +162,10 @@ a {
 .back button:hover {
     border-radius: 100px;
     background: #cacaca64;
+}
+
+.forward {
+    padding-left: 10px;
 }
 
 .forward img{

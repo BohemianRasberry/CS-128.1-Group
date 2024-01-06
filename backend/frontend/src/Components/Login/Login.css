@@ -40,7 +40,7 @@
     color: #000000;
     font-size: 20px;
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 15px;
     opacity: 50%;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
        'Lucida Sans', Arial, sans-serif; 
@@ -61,28 +61,44 @@
 }
 
 .eyecon {
-    margin-top: 5px;
     margin-left: -20px;
     margin-right: -20px;
-    padding-left: 14px;
+    padding-top: 1px;
+    padding-left: 20px;
     padding-right: 45px;
     width: 45px;
 }
 
-.eyecon span{
+.eyecon button{
     cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.eyecon button:hover{
+    border-radius: 100px;
+    background: #cacaca64;
 }
 
 .eyecon img{
+    margin-top: 5%;
     width: 40px;
 }
 
 .login-button{
-    display: flex;
-    gap: 30px;
     margin: 40px auto 25px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-       'Lucida Sans', Arial, sans-serif;
+}
+
+.login-button button{
+    border: none;
+}
+
+.login-button button:hover{
+    display: flex;
+    background-color: #ffffff;
+    border: 2px solid #18694e;
+    border-radius: 50px;
+    color: #18694e;
 }
 
 .login-button-text{
@@ -96,5 +112,7 @@
     border-radius: 50px;
     font-size: 25px;
     font-weight: 400;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+    'Lucida Sans', Arial, sans-serif;
     cursor: pointer;
 }

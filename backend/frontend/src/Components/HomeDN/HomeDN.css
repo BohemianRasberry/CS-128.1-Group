@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 4%;
+    margin-top: 3.8%;
     justify-content: center;
     align-items: center;   
     width: 90%;
@@ -53,7 +53,7 @@
     color: #000000;
     font-size: 20px;
     padding-left: 40px;
-    padding-right: 18px;
+    padding-right: 15px;
     opacity: 50%;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
        'Lucida Sans', Arial, sans-serif; 
@@ -61,16 +61,28 @@
 
 .dn-search-button {
     padding-top: 3px;
-    padding-right: 27px;
+    padding-right: 20px;
     opacity: 70%;
+}
+
+.dn-search-button button{
     cursor: pointer;
+
+    border: none;
+    background: none;
+    padding: 5px 10px 5px 10px;
+}
+
+.dn-search-button button:hover{
+    border-radius: 100px;
+    background: #cacaca64;
 }
 
 .dn-patients{
     width: 90%;
     background: #edf5f3;
     border-radius: 40px;
-    margin-top: clamp(2rem, 2vw, 100px);
+    margin-top: clamp(2rem, 2.5vw, 100px);
     margin-bottom: 1.7%;
 }
 

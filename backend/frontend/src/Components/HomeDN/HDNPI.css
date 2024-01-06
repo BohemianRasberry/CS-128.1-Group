@@ -58,7 +58,7 @@
     margin-left: 30px; 
     margin-right: 30px;
 
-    opacity: 60%;
+    opacity: 90%;
     font-size: clamp(0.75rem, 2vw, 16.4px); /* Adjusted the minimum size to prevent it from going to 0 */
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
     'Lucida Sans', Arial, sans-serif;

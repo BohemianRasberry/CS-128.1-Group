@@ -38,10 +38,9 @@ const Header = () => {
                     </div>
                 </div>
 
-                <div className="titulo" onClick={navigateHome}>
-                    <button className="title-short"><span>MLV DTP</span></button>
-                    <button className="title"><span>MLV Diagnostic Test Portal</span></button>
-                </div>
+                <div className="title-short">MLV DTP</div>
+                <div className="title">MLV Diagnostic Test Portal</div>
+
 
                 <div onClick={() => navigate(+1)}> 
                     <div className="forward"> 

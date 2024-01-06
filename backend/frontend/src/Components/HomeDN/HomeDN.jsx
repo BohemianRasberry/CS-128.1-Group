@@ -69,7 +69,7 @@ const HomeDN = () => {
                 <div className="dn-search">
                     <input type="id" placeholder="Enter Patient ID Number" value={searchInput} onChange={handleInputChange} />
                     <div className="dn-search-button" onClick={handleSearch}>
-                        <span><img src={search_icon} alt="search"></img></span>
+                        <button><img src={search_icon} alt="search"></img></button>
                     </div>
                 </div>
                 

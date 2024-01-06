@@ -29,7 +29,7 @@ const Header = () => {
         <div className='header'>
             <div className="left-stuff">
                 <div onClick={() => {
-                    if (window.location.pathname !== '/CS-128.1-Group/') {
+                    if (window.location.pathname !== '/CS-128.1-Group') {
                         navigate(-1);
                     }
                     }}>

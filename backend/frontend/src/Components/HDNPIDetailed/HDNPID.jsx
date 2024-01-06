@@ -3,7 +3,7 @@ import logo_icon from '../Assets/Logo.png';
 import './HDNPID.css';
 import { useParams } from 'react-router-dom';
 import { db } from '../../Firebase';
-import { doc, getDoc, query, collection, where, getDocs } from 'firebase/firestore'; // Import the necessary functions
+import { doc, getDoc, collection } from 'firebase/firestore'; // Import the necessary functions
 
 const HDNPID = () => {
     const { patientId, testCode, testId } = useParams();

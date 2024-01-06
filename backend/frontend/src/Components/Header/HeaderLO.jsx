@@ -8,8 +8,8 @@ const Header = () => {
     return (
         <div className='header'>
 
-            <div className="title-short-lo">MSJK DTP</div>
-            <div className="title-lo">MSJK Diagnostic Test Portal</div>
+            <div className="title-short-lo">MLV DTP</div>
+            <div className="title-lo">MLV Diagnostic Test Portal</div>
 
             <div className="home-lo">
                     <img src={home_icon} alt="Home" />

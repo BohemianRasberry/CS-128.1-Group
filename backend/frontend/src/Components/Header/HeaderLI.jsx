@@ -26,8 +26,8 @@ const Header = () => {
     return (
         <div className='header'>
             <div onClick={navigateHome}>
-                <div className="title-short"><span>MSJK DTP</span></div>
-                <div className="title"><span>MSJK Diagnostic Test Portal</span></div>
+                <div className="title-short"><span>MLV DTP</span></div>
+                <div className="title"><span>MLV Diagnostic Test Portal</span></div>
             </div>
 
             <button onClick={handleLogout} className="logout-button">
